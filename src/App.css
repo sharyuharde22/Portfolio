@@ -632,6 +632,16 @@ p {
   background: #354024;
 }
 
+/* ================= ABOUT ================= */
+.about {
+  padding: 20px;
+}
+
+.about p{
+  max-width: 100%;
+  line-height: 1.6;
+  font-size: 16px;
+}
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 768px) {
@@ -657,6 +667,24 @@ p {
 
   .timeline-row .card {
     width: 100%;
+  }
+  /* ABOUT SECTION */
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .about-text {
+    width: 100%;
+  }
+
+  .about-image {
+    justify-content: center;
+  }
+
+  .about-image img {
+    width: 220px;
+    height: 220px;
   }
 }
 
