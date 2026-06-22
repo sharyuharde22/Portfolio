@@ -673,17 +673,18 @@ p {
 
   .timeline-row.left,
   .timeline-row.right {
-    left: 0;
-    text-align: left;
-  }
+    left: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
 
   .timeline-dot {
     left: 10px !important;
   }
 
   .timeline-row .card {
-    width: 90%;
-    max-width: 350px;
+    width: 95%;
+    max-width: 95%;
     margin: 0 auto;
   }
 
