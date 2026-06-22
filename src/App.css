@@ -666,7 +666,9 @@ p {
 
   .timeline-row {
     width: 100%;
-    padding-left: 40px;
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
   }
 
   .timeline-row.left,
@@ -680,6 +682,12 @@ p {
   }
 
   .timeline-row .card {
+    width: 90%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .timeline-vertical {
     width: 100%;
   }
   /* ABOUT SECTION */
