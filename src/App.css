@@ -666,22 +666,26 @@ p {
 
 .timeline-row {
   width: 100%;
-  padding-left: 40px;
+  left: 0 !important;
+  padding-left: 60px;
+  padding-right: 15px;
+  box-sizing: border-box;
 }
 
 .timeline-row.left,
 .timeline-row.right {
-  left: 0;
+  left: 0 !important;
   text-align: left;
 }
 
 .timeline-dot {
-  left: 10px !important;
+  left: 20px !important;
+  transform: translateX(-50%);
 }
 
 .timeline-row .card {
-  width: calc(100% - 60px);
-  max-width: none;
+  width: 100%;
+  max-width: 100%;
   margin: 0;
 }
 
