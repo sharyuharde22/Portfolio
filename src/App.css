@@ -661,34 +661,29 @@ p {
   }
 
   .timeline-vertical::before {
-    left: 20px;
-  }
-
-  .timeline-row {
-    width: 100% !important;
-    left: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    display: flex !important;
-    justify-content: center !important;
-  }
-
-  .timeline-row.left,
-  .timeline-row.right {
-    left: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+  left: 20px;
 }
 
-  .timeline-dot {
-    left: 10px !important;
-  }
+.timeline-row {
+  width: 100%;
+  padding-left: 40px;
+}
 
-  .timeline-row .card {
-    width: 95% !important;
-    max-width: 95% !important;
-    margin: 0 auto !important;
-  }
+.timeline-row.left,
+.timeline-row.right {
+  left: 0;
+  text-align: left;
+}
+
+.timeline-dot {
+  left: 10px !important;
+}
+
+.timeline-row .card {
+  width: calc(100% - 60px);
+  max-width: none;
+  margin: 0;
+}
 
   .timeline-vertical {
     width: 100%;
@@ -738,7 +733,7 @@ p {
   font-size: 16px;
 }
 
+}
 section {
   padding: 80px 0;
-}
 }
