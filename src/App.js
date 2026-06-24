@@ -8,7 +8,6 @@ import Experience from "./components/Experience";
 import Certifications from "./components/Certifications";
 import Contact from "./components/Contact";
 import Internships from "./components/Internships";
-import Expertise from "./components/Expertise";
 
 function App() {
   return (
@@ -23,7 +22,6 @@ function App() {
         <Experience />
         <Certifications />
         <Internships />
-        <Expertise />
         <Contact />
       </div>
     </div>
