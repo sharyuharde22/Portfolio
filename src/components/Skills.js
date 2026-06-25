@@ -15,7 +15,7 @@ function Skills() {
 
         <div className="card">
           <h3>Web Development</h3>
-          <p>HTML, CSS, JavaScript, Node.js</p>
+          <p>HTML, CSS, JavaScript, React.js</p>
         </div>
 
         <div className="card">
@@ -35,7 +35,7 @@ function Skills() {
 
         <div className="card">
           <h3>Tools</h3>
-          <p>VS Code, GitHub, SQL Server</p>
+          <p>VS Code, GitHub, SQL Server, Visual Studio Community</p>
         </div>
       </div>
     </section>

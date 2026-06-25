@@ -18,7 +18,7 @@ function About() {
 
           <p>
             I love building practical, real-world projects that help me apply my skills in Python,
-            Flask, Java, and modern frameworks.
+            React.js, Java, and modern frameworks.
           </p>
 
           <p>

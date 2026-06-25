@@ -34,13 +34,8 @@ p {
   font-size: 0.95rem;
 }
 
-h1 {
-  font-size: 2.8rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2rem; }
 
 /* ================= CONTAINER ================= */
 .container {
@@ -134,16 +129,9 @@ html {
   transition: all 0.3s ease;
 }
 
-/* Animate hamburger → X when open */
-.nav-toggle.open span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-.nav-toggle.open span:nth-child(2) {
-  opacity: 0;
-}
-.nav-toggle.open span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-}
+.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ================= HERO ================= */
 .hero {
@@ -288,100 +276,94 @@ html {
   text-align: center;
 }
 
-/* ================= EXPERIENCE ================= */
+/* ================= EXPERIENCE SECTION ================= */
 .experience {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  align-items: center;
-  margin-top: 40px;
+  text-align: center;
 }
 
-.experience .card {
-  width: 100%;
-  max-width: 900px;
-  padding: 30px 40px;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 24px;
-  align-items: start;
-}
-
-.experience .card .exp-date {
-  font-size: 0.85rem;
-  color: #7a6a5f;
-  white-space: nowrap;
-  padding-top: 4px;
-}
-
-.experience .card .exp-content h3 {
-  margin: 0 0 6px 0;
-  font-size: 1.1rem;
-}
-
-.experience .card .exp-content p {
-  margin: 0;
-  font-size: 0.9rem;
-}
-
-/* ================= VERTICAL TIMELINE ================= */
+/* ── Desktop: horizontal swipeable carousel ── */
 .timeline-vertical {
   position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;   /* center cards when few items */
+  gap: 40px;
   margin-top: 60px;
-  padding-bottom: 40px;
+  padding: 20px 60px 40px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
 
+.timeline-vertical::-webkit-scrollbar {
+  display: none;
+}
+
+/* Horizontal connector line — sits exactly on the dots */
 .timeline-vertical::before {
   content: "";
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(to bottom, transparent, var(--accent), transparent);
+  top: 29px;              /* dot is 18px tall, so 20px padding + 9px = 29px center */
+  left: 60px;
+  right: 60px;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--accent), transparent);
+  pointer-events: none;
 }
 
+/* Each card column: dot on top, card below */
 .timeline-row {
   position: relative;
-  width: 50%;
-  margin-bottom: 80px;
+  flex: 0 0 320px;
+  scroll-snap-align: start;
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  left: unset !important;
+  width: unset !important;
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+  justify-content: unset !important;
 }
 
-.timeline-row.left {
-  left: -10%;
-  justify-content: flex-end;
-  padding-right: 40px;
-}
-
-.timeline-row.right {
-  left: 50%;
-  justify-content: flex-start;
-  padding-left: 40px;
-}
-
-.timeline-row .card {
-  display: inline-block;
-  width: 80%;
-  max-width: 320px;
-}
-
+/* Dot — on the line */
 .timeline-dot {
-  position: absolute;
-  top: 20px;
   width: 18px;
   height: 18px;
   background: #6366f1;
   border-radius: 50%;
-  box-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.6);
+  flex-shrink: 0;
+  position: static;
+  order: -1;
+  z-index: 2;
 }
 
-.timeline-row.left  .timeline-dot { right: -9px; }
-.timeline-row.right .timeline-dot { left: -9px; }
+/* Card fills the column width */
+.timeline-row .card {
+  width: 100%;
+  max-width: 320px;
+  padding: 28px 30px;
+  text-align: left;
+  display: block;
+}
+
+.timeline-row .card h3 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+  color: #4C3D19;
+}
+
+.timeline-row .card p {
+  margin: 4px 0;
+  font-size: 0.9rem;
+}
 
 .timeline-row .card:hover {
-  box-shadow: 0 0 30px rgba(0, 114, 255, 0.6);
+  box-shadow: 0 0 30px rgba(0, 114, 255, 0.5);
 }
 
 /* ================= ABOUT ================= */
@@ -557,33 +539,13 @@ html {
     justify-content: center;
   }
 
-  .experience .card {
-    grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 24px;
-  }
-
-  .timeline-vertical::before {
-    left: 20px;
+  .timeline-vertical {
+    padding: 20px 20px 30px;
+    gap: 20px;
   }
 
   .timeline-row {
-    width: 100%;
-    left: 0 !important;
-    padding-left: 55px;
-    padding-right: 15px;
-    justify-content: flex-start;
-  }
-
-  .timeline-dot {
-    left: 20px !important;
-    right: auto !important;
-    transform: translateX(-50%);
-  }
-
-  .timeline-row .card {
-    width: 100%;
-    max-width: 100%;
+    flex: 0 0 280px;
   }
 }
 
@@ -602,12 +564,10 @@ html {
     flex: 1;
   }
 
-  /* Show hamburger */
   .nav-toggle {
     display: flex;
   }
 
-  /* Nav links — hidden by default, shown with .open */
   .navbar ul {
     display: none;
     flex-direction: column;
@@ -643,7 +603,6 @@ html {
   h1 { font-size: 2rem; }
   h2 { font-size: 1.5rem; }
 
-  /* SECTIONS */
   section {
     padding: 50px 0;
   }
@@ -669,12 +628,20 @@ html {
     grid-template-columns: 1fr;
   }
 
-  /* EXPERIENCE */
-  .experience .card {
-    grid-template-columns: 1fr;
-    gap: 8px;
-    padding: 18px;
+  /* EXPERIENCE — full width cards on mobile */
+  .timeline-vertical {
+    padding: 16px 16px 24px;
+    gap: 16px;
+    margin-top: 30px;
+  }
+
+  .timeline-row {
+    flex: 0 0 85vw;
+  }
+
+  .timeline-row .card {
     max-width: 100%;
+    padding: 22px 20px;
   }
 
   /* MODAL */
@@ -693,31 +660,6 @@ html {
   .thumbnails img {
     width: 48px;
     height: 36px;
-  }
-
-  /* TIMELINE VERTICAL */
-  .timeline-vertical::before {
-    left: 18px;
-  }
-
-  .timeline-row {
-    width: 100%;
-    left: 0 !important;
-    padding-left: 50px;
-    padding-right: 12px;
-    margin-bottom: 50px;
-  }
-
-  .timeline-row .card {
-    width: 100%;
-    max-width: 100%;
-    padding: 16px;
-  }
-
-  .timeline-dot {
-    left: 18px !important;
-    right: auto !important;
-    transform: translateX(-50%);
   }
 }
 
@@ -743,5 +685,9 @@ html {
 
   .slider-buttons button {
     width: 100%;
+  }
+
+  .timeline-row {
+    flex: 0 0 90vw;
   }
 }
